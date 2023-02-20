@@ -12,7 +12,27 @@ import com.aventstack.extentreports.Status;
 import base.initial;
 import pages.loginpage;
 
-// A test case to check the addsbu and modal
+/**
+*
+* Description: This test case checks if the application allows the user to add a unit successfully
+* 
+* Date: 2023-02-20
+* Modified date - 2023-02-20
+* Author - shadurshi
+* Testcase number -
+* precondition
+* 
+* 
+* Test Steps:
+* 1.
+* 
+*
+* 
+* Expected Results:
+* - 
+* - 
+*/
+
 
 
 public class newtestcase extends initial {
@@ -31,15 +51,24 @@ public  void addSbu () throws InterruptedException ,IOException{
 	loginpage.sbubutton.click();
 	
 	
-	//checking the ui of add sbu button
+	/*STEP-01 CHECKING UI OF ADDSBU BUTTON(enable,visible,background-color,padding,font-family,color,font-size,text-spelling,
+	*border-color,border-radius,font-weight,cursor,opacity,box-shadow)
+	*/
 	properties.uiOfAddSbu();
-	//click add sbu button
+	
+	//STEP-02 CLICK ADDSBU BUTTON
 	driver.findElement(By.xpath("//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div[1]/div/div[2]/button")).click();
-	//checking the ui of sbumodal
+	
+	//STEP-03 CHECKING THE UI OF THE POPUP , AFTER CLICKING THE ADDSBU BUTTON(Visibility,position,size,Background-color,border-color,overflow,margin,cursor,z-index,header,content,onclick-inside,onclick- outside)
 	properties.uiOfSbuModal();
-	//checking the ui of textbox of sbu
+	
+	//STEP-04 CHECKING THE UI OF TEXTBOX OF SBU(PlaceHolder,Visibility,Enablity,Postion,Background-color,Border-color,Length,Width,Border Color,Font style,Font Size,Font-color)
 	properties.uioftextboxsbu();
-	//checking the ui of textdescription of sbu
+	
+	//STEP-05 CHECKING THE VALIDATION OF TEXTBOX OF SBU
+	properties.validationoftextboxsbu();
+	
+	//STEP-06 CHECKING THE UI OF TEXTDESCRIPTION(PlaceHolder,Visibility,Enablity,Postion,Background-color,Border-color,Length,Width,Border Color,Font style,Font Size,Font-color)
 	properties. uioftextdescription();
 }
 

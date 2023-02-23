@@ -37,6 +37,7 @@ public static void extentreport() throws IOException{
 	extent = new ExtentReports();
 	htmlreporter = new ExtentHtmlReporter("C:\\Users\\sgic\\eclipse-workspace\\sadz\\report\\report.html");
 	extent.attachReporter(htmlreporter);
+
 	
 	
 }

@@ -33,9 +33,9 @@ public class logintest extends initial {
 			elementvisible = false;
 		}
 		if (elementvisible) {
-			testCase.log(Status.INFO, "actualvalue is :" + actualelement);
-			testCase.log(Status.INFO, "expectedvalue is :" + expectedelement);
-			testCase.log(Status.PASS, "element is displayed");
+			testCase.log(Status.INFO, "actualvalue is :" + actualelement +"    "+"expectedvalue is :"+expectedelement);
+		//	testCase.log(Status.INFO, "expectedvalue is :" + expectedelement);
+			testCase.log(Status.PASS, "element not displayed");
 		} else {
 
 			testCase.log(Status.INFO, "actualvalue is :" + actualelement);

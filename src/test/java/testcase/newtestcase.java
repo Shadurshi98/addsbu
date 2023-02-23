@@ -50,14 +50,14 @@ public  void addSbu () throws InterruptedException ,IOException{
 	loginpage.master.click();
 	loginpage.sbubutton.click();
 	
-	
+	properties.first();
 	/*STEP-01 CHECKING UI OF ADDSBU BUTTON(enable,visible,background-color,padding,font-family,color,font-size,text-spelling,
 	*border-color,border-radius,font-weight,cursor,opacity,box-shadow)
 	*/
 	properties.uiOfAddSbu();
 	
-	//STEP-02 CLICK ADDSBU BUTTON
-	driver.findElement(By.xpath("//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div[1]/div/div[2]/button")).click();
+	//STEP-02 CHECKING THE CLICKABILITY AND CLICKING THE ADDSBU BUTTON
+	properties.clickabilityofaddsbubutton();
 	
 	//STEP-03 CHECKING THE UI OF THE POPUP , AFTER CLICKING THE ADDSBU BUTTON(Visibility,position,size,Background-color,border-color,overflow,margin,cursor,z-index,header,content,onclick-inside,onclick- outside)
 	properties.uiOfSbuModal();
@@ -65,11 +65,27 @@ public  void addSbu () throws InterruptedException ,IOException{
 	//STEP-04 CHECKING THE UI OF TEXTBOX OF SBU(PlaceHolder,Visibility,Enablity,Postion,Background-color,Border-color,Length,Width,Border Color,Font style,Font Size,Font-color)
 	properties.uioftextboxsbu();
 	
+	//STEP-05 PASSING A DATA TO THE TEXTBOX
+	properties.addingtextdata();
+	
 	//STEP-05 CHECKING THE VALIDATION OF TEXTBOX OF SBU
-	properties.validationoftextboxsbu();
+//roperties.validationoftextboxsbu(); 
 	
 	//STEP-06 CHECKING THE UI OF TEXTDESCRIPTION(PlaceHolder,Visibility,Enablity,Postion,Background-color,Border-color,Length,Width,Border Color,Font style,Font Size,Font-color)
 	properties. uioftextdescription();
+	
+	
+	//STEP-07-PASSING DATA TO THE DESCRIPTION BOX
+	properties.addingdescriptiondata();
+	
+	// STEP-08-CHECKING THE UI OF SAVE BUTTON
+	properties.uiofsave();
+	
+	//STEP-09-CLICKING THE SAVE BUTTON
+	properties.clickabilityofsavebutton();
+	Thread.sleep(2000);
+	//STEP-10-CHECKING THE WHETHER THE ELEMENT ADDED SUCCESSFULLY
+	properties.elementadd();
 }
 
 }

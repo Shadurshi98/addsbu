@@ -43,7 +43,7 @@ public class material extends initial {
 		loginpage.username.sendKeys("admin");
 		loginpage.password.sendKeys("tokyo@admin");
 		loginpage.loginbutton.click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		loginpage.master.click();
 		loginpage.equipment.click();
 		Thread.sleep(2000);
@@ -51,29 +51,38 @@ public class material extends initial {
 		loginpage.materialsubcatergory.click();
 		Thread.sleep(3000);
 		
-		//STEP-02-CLICKING RELEAVANT TEST
-		loginpage.relevanttest.click();
-		Thread.sleep(2000);
-		properties.first();
 		
-		//STEP-03-CHECKING THE FUNCTIONALITY OF CHECKBOX
+		//STEP-02-SEARCH FOR THE NAME IN THE ROW
+		//STEP-03-CHECKING THE EXISTANCE OF RELEVANT TEST ICON
+		//STEP-04-CLICK RELEAVANT TEST
+		properties.checkpagination();
+		
+
+		//STEP-05-CHECKING THE FUNCTIONALITY OF CHECKBOX
 		properties.checkbox();
 		
-		//STEP-04-CHECKING THE UI OF SAVE BUTTON
+		//STEP-06-CHECKING THE UI OF SAVE BUTTON
 		properties.uiofsave();
 		
-		//STEP-05-CLICKING THE SAVE BUTTON
-		loginpage.materialsubcatergorysavebutton.click();
+		//STEP-07-CLICKING THE SAVE BUTTON
+	loginpage.materialsubcatergorysavebutton.click();
 		Thread.sleep(5000);
 		
-		//STEP-06-CHECKING WHETHER THE CHANGES HAVE SAVED
+		//STEP-08-CHECKING WHETHER THE CHANGES HAVE SAVED
 		properties.checking();
 		
-		//STEP-07-CHECKING THE UI OF CANCEL BUTTON
+		//STEP-09-CHECKING THE UI OF CANCEL BUTTON
 		properties.uiofcancel();
-		
-		//STEP-08-CLICKING THE CANCEL BUTTON
-		loginpage.materialsubcatergorycancel.click();
+	
+		//STEP-10-CLICKING THE CANCEL BUTTON
+	loginpage.materialsubcatergorycancel.click();
+	
+	
+	
+	
+	
+	
+	
 
 //		Thread.sleep(3000);
 //		String value =driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[2]/table/tbody/tr[2]/td/div")).getText();

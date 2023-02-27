@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -62,7 +63,7 @@ public class loginpage {
 	@FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
 	public static WebElement materialsubcatergory;
 	
-	@FindBy(xpath="//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[3]/td[5]/span/a/span")
+	@FindBy(xpath="//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[2]/td[5]/span")
 	public static WebElement relevanttest;
 	
 	@FindBy(xpath="/html/body/div[3]/div/div[2]/div/div[2]/div[3]/div/button[2]")
@@ -82,5 +83,24 @@ public class loginpage {
 	
 	@FindBy(xpath="//ul[@class='ant-pagination mini ant-table-pagination ant-table-pagination-right']")
 	public static WebElement pagination;
-}
+	
+	
+	@FindBy(xpath="//li[@title='Next Page']//button[@type='button']")
+	public static WebElement nxtpage;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div/div[2]/div[1]/table/thead/tr/th[1]/div/span[2]")
+	public static WebElement search;
+	
+	@FindBy(xpath="//input[@placeholder='Material Sub Category']")
+	public static WebElement searchtext;
+	
+	@FindBy(xpath="//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div/div[1]/div")
+	public static WebElement outside;
+	
+	@FindBy(xpath="//th[1]")
+	public static WebElement placeholder;
+	
+	@FindBy(xpath="//th[1]//div[1]//span[2]")
+	public static WebElement searchmsub;
 
+}

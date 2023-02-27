@@ -1,7 +1,17 @@
 package testcase;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.extensions.XSSFCellAlignment;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.testng.AssertJUnit;
@@ -184,6 +194,79 @@ public class propertiesofexport extends initial {
 		}
 
 	}
+	
+	public void checking2() throws IOException, InterruptedException {
+		
+		
+		// Get the text of the element that contains the string "11-20 of 1373"
+		String elementText = driver.findElement(By.xpath("//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/ul/li[1]")).getText();
+
+		// Split the text into an array of strings using "of" as the delimiter
+		String[] textArray = elementText.split("of");
+
+		// Get the second element in the array, which should be " 1373"
+		String numberString = textArray[1].trim();
+
+		// Convert the string to an integer
+		int number = Integer.parseInt(numberString);
+
+		// Print the number
+		System.out.println(number);
+
+		
+
+		String csvFile = "C:\\Users\\sgic\\Downloads\\material.csv";
+
+		try {
+		    File file = new File(csvFile);
+		    Thread.sleep(5000);
+		    Scanner scanner = new Scanner(file);
+
+		    // Skip the header row
+		    if (scanner.hasNextLine()) {
+		        scanner.nextLine();
+		    }
+
+		    int rowCount = 0;
+		    while (scanner.hasNextLine()) {
+		    	Thread.sleep(5000);
+		        String line = scanner.nextLine();
+		        String[] fields = line.split(",");
+
+		        // Process the row here
+		        Thread.sleep(5000);
+		        rowCount++;
+		    }
+
+		    System.out.println("Number of rows processed: " + rowCount);
+
+		    scanner.close();
+		} catch (FileNotFoundException e) {
+		    System.out.println("File not found: " + csvFile);
+		    e.printStackTrace();
+		}
+
+		
+		
+//		String csvFile = "C:\\Users\\sgic\\Downloads\\material.csv";
+//		Thread.sleep(2000);
+//        BufferedReader br = new BufferedReader(new FileReader(csvFile));
+//        String line;
+//        int numOfCsvEntries = 0;
+//        while ((line = br.readLine()) != null) {
+//            numOfCsvEntries++;
+//        }
+//        br.close();
+//        System.out.println("print" +numOfCsvEntries);
+	}
+	
+//	public void checking2() throws IOException {
+//		String download = "C:/Users/sgic/Downloads";
+//		File downloadfile = new File(download + "downloaded file");
+//		FileInputStream fis = new FileInputStream(downloadfile);
+//		Workbook downloadedWorkbook = new XSSFWorkbook(fis);
+//		System.out.println("print");
+//	}
 
 	public static void TestCasePrint(String TestCaseName, String ExpectedValue, String ActualValue) {
 		boolean position = true;
@@ -194,7 +277,7 @@ public class propertiesofexport extends initial {
 			position = false;
 		}
 		if (position) {
-			testCase.log(Status.INFO, "Actualvalue :- " + ActualValue);
+			testCase.log(Status.INFO, "Actualvalue :- " + ActualValue); 
 			testCase.log(Status.INFO, "Expectedvalue :- " + ExpectedValue);
 			testCase.log(Status.INFO, "Correct value");
 			testCase.log(Status.PASS, "");

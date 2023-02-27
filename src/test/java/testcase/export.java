@@ -1,5 +1,7 @@
 package testcase;
 
+import java.io.IOException;
+
 import org.openqa.selenium.support.PageFactory;
 /**
 *
@@ -31,7 +33,7 @@ public class export extends initial {
 	propertiesofexport properties = new propertiesofexport();
 
 	@Test
-	public void first() throws InterruptedException {
+	public void first() throws InterruptedException ,IOException{
 		PageFactory.initElements(driver, loginpages);
 
 		loginpage.username.sendKeys("admin");
@@ -51,5 +53,8 @@ public class export extends initial {
 
 		//STEP-03-CHECKING WHETHER THE DOCUMENT IS DOWNLOADED
 		properties.checking();
+		
+		
+	//	properties.checking2();
 			}
 }
